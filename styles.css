@@ -1,0 +1,492 @@
+/*
+====================================
+1. Reset e Configurações Globais
+====================================
+*/
+:root {
+    --cor-principal: hwb(309 81% 4%); /* Rosa Claro */
+    --cor-secundaria: #FAEBD7; /* Bege (Off-white) */
+    --cor-texto: #3a3a3a;
+    --cor-fundo: #ffffff;
+    --cor-destaque: #D2B48C; /* Marrom claro suave */
+    --cor-logo: lch(91.65% 15.32 236.43); /* Azul Água */
+    --azul: #25D366; /* Cor do WhatsApp */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    line-height: 1.6;
+}
+/* ----- ÍCONE FLUTUANTE DO INSTAGRAM ----- */
+.instagram-float {
+    /* Posição Fixa na tela */
+    position: fixed;
+    
+    /* Posicionamento: 80px acima do WhatsApp (que está em 20px) */
+    bottom: 90px; 
+    right: 20px;
+    
+    /* Estilo do botão (usando cores da marca ou oficial do Instagram) */
+    background-color: var(--cor-principal); /* Usando o Rosa da sua marca */
+    color: rgb(211, 59, 59); 
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    
+    /* Centralização do ícone */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Tamanho do ícone */
+    font-size: 30px;
+    text-decoration: none;
+    
+    /* Efeito e Sombra */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.instagram-float:hover {
+    background-color: var(--dourado); /* Destaque no hover */
+    transform: scale(1.05);
+}
+
+/* Responsividade: Ajusta a posição em telas menores */
+@media (max-width: 600px) {
+    .instagram-float {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        bottom: 75px; /* Ajusta para telas menores */
+        right: 15px;
+    }
+}
+
+/* ----- ÍCONE FLUTUANTE DO WHATSAPP ----- */
+.whatsapp-float {
+    /* Posição Fixa na tela */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    
+    /* Estilo do botão */
+    background-color: var(--azul); /* Usando sua cor Azul da marca */
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    
+    /* Centralização do ícone */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Tamanho do ícone */
+    font-size: 30px;
+    text-decoration: none;
+    
+    /* Efeito e Sombra */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: var(--azul-escuro); /* Escurece no hover */
+    transform: scale(1.05);
+}
+
+/* Responsividade: Ajusta a posição em telas menores */
+@media (max-width: 600px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/*
+====================================
+2. LOGO
+====================================
+*/
+.logo-container {
+    text-align: center;
+    background-color: var(--cor-logo);
+   }
+
+.logo {
+    width: 300px; /* Ajuste conforme o tamanho da sua logo */
+    height: 200px;
+    bottom: 0px;
+    margin-top: 10px;
+    
+}
+
+/*
+====================================
+3. MENU/HEADER
+====================================
+*/
+header {
+    background-color: var(--cor-principal);
+    color: #0c0000;
+    position: sticky; /* Menu fixo no topo */
+    top: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    color: #0c0000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #7a6060;
+    font-weight: 400;
+    padding: 0px 10px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--cor-fundo);
+    border-bottom: 2px solid 
+ 
+}
+/* dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: white;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ddd;
+    width: 200px;
+    z-index: 1000;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f4f4f4;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/*====================================
+4. BANNER (HERO)
+====================================*/
+.hero {
+    background: url('img/banner_fundo.jpg') no-repeat center center/cover; /* Substitua por uma imagem real de crochê/papelaria */
+    background-color: #f7f7f7; /* Cor de fallback */
+    color: var(--cor-texto);
+    text-align: justify;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4em;
+    color: var(--cor-texto);
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.3em;
+    font-weight: 500px;
+    margin-bottom: 10px;
+    max-width: 1200px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-hero {
+    display: inline-block;
+    background-color: var(--cor-principal);
+    color: white;
+    text-decoration: none;
+    padding: 5px 25px;
+    border-radius: 5px;
+    font-weight: 600px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-hero:hover {
+    background-color: var(--cor-destaque);
+    transform: translateY(-2px);
+}
+
+/*
+====================================
+5. SEÇÃO PRODUTOS (CARDS)
+====================================
+*/
+.produtos {
+    padding: 10px 30px;
+    text-align: center;
+    max-width: 1250px;
+    margin: 0 auto;
+    
+}
+
+.produtos h2 {
+    font-size: 2.5em;
+    color:hwb(199 76% 0%);
+    margin-bottom: 40px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+    flex-wrap: wrap;
+    text-decoration: none;
+    color: inherit;
+    
+    
+}
+
+.card {
+    background-color: var(--cor-logo);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-grow: 1;
+    max-width: 350px;
+   
+    
+}
+
+.card:hover {
+    background-color: var(--cor-destaque);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    
+}
+
+.card img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    
+}
+
+.card h3 {
+    color: var(--cor-texto);
+    font-size: 1.3em;
+    padding: 15px 10px;
+    font-weight: 600;
+    
+}
+
+/*SOBRE*/
+/* Container principal que envolve a imagem e a seção de texto */
+.artesa-container {
+    display: flex; /* Habilita o Flexbox */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    gap: 20px; /* Adiciona um espaço entre a imagem e o texto (opcional) */
+    max-width: 1200px; /* Limita a largura total do container (ajuste conforme necessário) */
+    margin: 0 auto; /* Centraliza o container na página (opcional) */
+    padding: 100px;
+    background-color: var(--cor-fundo);
+}
+
+/* Container da imagem */
+.img-artesa {
+    flex-shrink: 0; /* Impede que a imagem encolha se houver pouco espaço */
+}
+
+/* Estilo para a imagem em si */
+.img-artesa img {
+    border-radius: 50%; /* Adiciona bordas arredondadas (opcional) */
+    display: block; /* Remove espaço extra abaixo da imagem */
+    max-width: 100%; /* Garante que a imagem seja responsiva */
+    height: auto;
+}
+
+/* Seção do texto */
+.hero-artesa {
+    flex-grow: 1; /* Permite que o texto ocupe o espaço restante */
+    /* Você pode adicionar estilos de fonte, cor, etc. aqui */
+       
+}
+
+/* Estilo para o parágrafo dentro da seção */
+.hero-artesa p {
+    line-height: 1.9;
+    text-align: justify;
+    font-size: 20px;
+}
+.hero-artesa h1 {
+    font-family:cursive;
+    font-size: 50px;
+    margin-bottom: auto;
+    
+}
+
+/*
+====================================
+6. RODAPÉ
+====================================
+*/
+footer {
+    background-color: var(--cor-texto);
+    color: #fffdfd;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9em;
+    
+    }
+
+/* Container contendo imagem + texto */
+.footer {
+    display: flex;              /* Deixa itens lado a lado */
+    flex-direction: column-reverse;        /* Mantém imagem e texto na horizontal */
+    align-items: center;     /* Centraliza verticalmente */  
+    gap: 3px;                  /* Espaço entre imagem e texto */
+    margin-top: 0px;
+    text-decoration: none; /* ESSA É A PROPRIEDADE CHAVE */
+    color: #fffdfd;        /* Garante que a cor do texto herde a cor do footer */
+    padding: 0px;
+    margin-bottom: 10px;
+   
+}
+
+/* Imagem */
+.logo-bits {
+    width: 90px; 
+    height: 40px; 
+    border-radius: 0px; 
+}
+
+/* Texto ao lado da imagem */
+.footer p {
+    padding: 0%;
+    margin: 0%;
+    font-size: 0.7em;
+    
+}
+.email{
+    text-decoration: none;
+    color: #fffdfd;
+
+}
+
+
+/*Style Feed Instagram*/
+.instagram-feed{
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.instagram-feed h2{
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: hwb(199 76% 0%);
+    font-family: 'poppins' sans-serif;
+    font-weight: 600;
+
+}
+.snapwidget-widget {
+    width: 100%;
+    max-width:500 px; 
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+/*
+====================================
+7. RESPONSIVIDADE
+====================================
+*/
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 15px;
+        min-height: 300px;
+    }
+
+    .hero h1 {
+        font-size: 3em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .card-container {
+        justify-content: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    header .content {
+        padding: 10px 20px;
+    }
+}
